@@ -1,4 +1,4 @@
-class slingShot{
+class SlingShot{
     constructor(bodyA,pointB){
         var options={
             bodyA:bodyA,
@@ -9,7 +9,10 @@ class slingShot{
         }
         this.pointB=pointB
         this.sling=Constraint.create(options)
-        Wprld.add(world,this.sling)
+        World.add(world,this.sling)
+    }
+    attach(body){
+        this.sling.bodyA=body
     }
     fly(){
         this.sling.bodyA=null
